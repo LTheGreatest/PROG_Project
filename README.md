@@ -6,3 +6,5 @@ e outras funções para o formato XMP2.
   Espera-se que os elementos que participam neste trabalho não façam o obséquio de javardar na sua execução!!!
   
   IT'S TRIVIAL MY FRIENDS!!!!!!!!!!!!!!
+  
+  #jonathanpila
