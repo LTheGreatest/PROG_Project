@@ -12,3 +12,19 @@ e outras funções para o formato XMP2.
   IT'S TRIVIAL MY FRIENDS!!!!!!!!!!!!!!
   
   #jonathanpila
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Troladinha do SirKazzio ;D
