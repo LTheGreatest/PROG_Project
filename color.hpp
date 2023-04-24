@@ -12,6 +12,7 @@ namespace prog
       Color();
       Color(const Color& c);
       Color(rgb_value r, rgb_value g, rgb_value b);
+      static const Color RED, GREEN, BLUE, BLACK, WHITE;
       rgb_value red() const;
       rgb_value& red();
       rgb_value green() const;
