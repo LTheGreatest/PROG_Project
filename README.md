@@ -5,6 +5,10 @@ PROJETO PROGRAMAÇAO
 e outras funções para o formato XMP2.
   Espera-se que os elementos que participam neste trabalho não façam o obséquio de javardar na sua execução!!!
   
+  NOTAS: COMENTAR BEM CODIGO + VARIAVEIS EXPLICITAS + CODIGO LEGIVEL
+  CUIDADO COM PLAGIO
+  SABER EXPLICAR BEM CODIGO TODO
+  
   IT'S TRIVIAL MY FRIENDS!!!!!!!!!!!!!!
   
   #jonathanpila
