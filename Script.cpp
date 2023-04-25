@@ -106,7 +106,7 @@ namespace prog {
                 int blue = image->at(x,y).blue();
                 int red = image->at(x,y).red();
                 int green = image->at(x,y).green();
-                int v = (blue + green + red)/3.0;
+                int v = (blue + green + red)/3;
                 image->at(x,y).blue() = v;
                 image->at(x,y).red() = v;
                 image->at(x,y).green() = v;
