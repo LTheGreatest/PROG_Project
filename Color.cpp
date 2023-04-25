@@ -24,7 +24,7 @@ namespace prog {
     }
 
 
-    //getters implementantion 
+    //getters implementantion (red, green and blue)
     rgb_value Color::red() const {
         return red_;
     }
