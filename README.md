@@ -15,14 +15,14 @@ e outras funções para o formato XMP2.
   
   
   Notas no progresso do trabalho:
-    - Color.hpp -> feito e testado
-    - Color.cpp -> feito e testado
-    - Image.hpp -> feito e testado
-    - Image.cpp -> feito e testado
-    - Script.hpp -> feito mas suscetível a mudanças caso seja preciso
-    - Script.cpp -> por fazer
-    - XMP2.hpp -> não é preciso alterar
-    - XMP".cpp -> por fazer 
+  - Color.hpp -> feito e testado
+  - Color.cpp -> feito e testado
+  - Image.hpp -> feito e testado
+  - Image.cpp -> feito e testado
+  - Script.hpp -> feito mas suscetível a mudanças caso seja preciso
+  - Script.cpp -> por fazer
+  - XMP2.hpp -> não é preciso alterar
+  - XMP".cpp -> por fazer 
   
   
   
