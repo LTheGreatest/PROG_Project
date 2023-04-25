@@ -91,4 +91,22 @@ namespace prog {
             }
         }
     }
+
+    void Script::to_gray_scale(){
+        //Transforms each individual pixel (r, g, b) to (v, v, v)
+        //v = (r + g + b)/3
+        int height = image->height();
+        int width = image->width();
+        for(int y = 0; y < height; y++){
+            for(int x = 0; x < width; x++){
+                int blue = image->at(x,y).blue();
+                int red = image->at(x,y).red();
+                int green = image->at(x,y).green();
+                int v = (blue + green + red)/3.0;
+                image->at(x,y).blue() = v;
+                image->at(x,y).red() = v;
+                image->at(x,y).green() = v;
+            }
+        }
+    }
 }

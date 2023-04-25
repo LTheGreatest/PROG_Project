@@ -17,7 +17,7 @@ namespace prog
     //Image manipulations (dimensions are not altered)
     void invert();
     void to_gray_scale();
-    void replace(const Color &other);
+    void replace(const Color &rgb1, const Color &rgb2);
     void fill(int x, int y, int w, int h, const Color &other);
     void h_mirror();
     void v_mirror();
