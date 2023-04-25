@@ -52,6 +52,10 @@ namespace prog {
                 invert();
                 continue;
             }
+            if(command == "to_gray_scale"){
+                to_gray_scale();
+                continue;
+            }
 
         }
     }
