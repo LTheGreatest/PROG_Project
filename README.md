@@ -22,7 +22,7 @@ e outras funções para o formato XMP2.
   - Script.hpp -> feito mas suscetível a mudanças caso seja preciso
   - Script.cpp -> por fazer
   - XMP2.hpp -> não é preciso alterar
-  - XMP".cpp -> por fazer 
+  - XMP2.cpp -> por fazer 
   
   
   
