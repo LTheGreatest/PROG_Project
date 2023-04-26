@@ -56,7 +56,12 @@ namespace prog {
                 to_gray_scale();
                 continue;
             }
-
+            if(command == "crop"){
+                int x, y, w, h;
+                input >> x >> y >> w >> h;
+                crop(x, y, w, h);
+                continue;
+            }
         }
     }
     void Script::open() {
@@ -112,5 +117,18 @@ namespace prog {
                 image->at(x,y).green() = v;
             }
         }
+    }
+    
+    void Script::crop(int x, int y, int w, int h){
+        //Reduce the image to all pixels contained in the rectangle
+        //Define by top-left corner (x,y), width w and height h
+         Image new_image(w ,h);
+         for(int yy = y; yy < y+h; yy++){
+             for(int xx = x; xx < x+w; xx++){
+              new_image.at(xx-x,yy-y) = image->at(xx,yy);
+
+            }
+        }
+        *image = new_image;
     }
 }
