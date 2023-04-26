@@ -20,11 +20,14 @@ e outras funções para o formato XMP2.
   - Image.hpp -> feito e testado
   - Image.cpp -> feito e testado
   - Script.hpp -> feito mas suscetível a mudanças caso seja preciso
-  - Script.cpp -> com funções por fazer (invert feito e testado, to_gray_scale feito e testado)
+  - Script.cpp -> com funções por fazer (invert feito e testado, to_gray_scale feito e testado, crop feito e testado)
   - XMP2.hpp -> não é preciso alterar
   - XMP2.cpp -> por fazer 
   
   
+  Lucas ->Fazer os que envolvem a mudança de dimensão de imagem.
+  Álvaro -> ...
+  Pedro -> ...
   
   ATENÇÃO:
   No Script.cpp é necessário no run acrecentar o comando que permite executar cada função se não o código falha!!!
