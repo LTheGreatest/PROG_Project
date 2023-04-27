@@ -158,7 +158,7 @@ namespace prog{
     }
 
     void Script::rotate_right(){
-        // Rotate image right by 90 degrees
+        //rotate image right by 90 degrees
         Image new_image(image->height(), image->width()); //height = current image width | width = curret image height
         int h = new_image.height();
         int w = new_image.width();
