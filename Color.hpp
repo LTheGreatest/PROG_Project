@@ -1,8 +1,8 @@
 #ifndef __prog_Color_hpp__
 #define __prog_Color_hpp__
 
-namespace prog
-{
+namespace prog{
+  
   typedef unsigned char rgb_value;
   class Color
   {
