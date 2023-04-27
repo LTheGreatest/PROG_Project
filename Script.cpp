@@ -5,9 +5,9 @@
 #include "XPM2.hpp"
 using namespace std;
 
-namespace prog {
+namespace prog{
     //used to read color values from a script file
-    istream& operator>>(istream& input, Color& c) {
+    istream& operator>>(istream& input, Color& c){
         int r, g, b;
         input >> r >> g >> b;
         c.red() = r;
@@ -17,33 +17,32 @@ namespace prog {
     }
 
     Script::Script(const string& filename) :
-            image(nullptr), input(filename) {
-
+            image(nullptr), input(filename){
     }
-    void Script::clear_image_if_any() {
-        if (image != nullptr) {
+    void Script::clear_image_if_any(){
+        if (image != nullptr){
             delete image;
             image = nullptr;
         }
     }
-    Script::~Script() {
+    Script::~Script(){
         clear_image_if_any();
     }
 
-    void Script::run() {
+    void Script::run(){
         string command;
-        while (input >> command) {
+        while (input >> command){
             cout << "Executing command '" << command << "' ..." << endl;
-            if (command == "open") {
+            if (command == "open"){
                 open();
                 continue;
             }
-            if (command == "blank") {
+            if (command == "blank"){
                 blank();
                 continue;
             }
             //other commands require an image to be previously loaded
-            if (command == "save") {
+            if (command == "save"){
                 save();
                 continue;
             }
@@ -73,14 +72,14 @@ namespace prog {
             }
         }
     }
-    void Script::open() {
+    void Script::open(){
         //replace current image (if any) with image read from PNG file
         clear_image_if_any();
         string filename;
         input >> filename;
         image = loadFromPNG(filename);
     }
-    void Script::blank() {
+    void Script::blank(){
         //replace current image (if any) with blank image
         clear_image_if_any();
         int w, h;
@@ -88,7 +87,7 @@ namespace prog {
         input >> w >> h >> fill;
         image = new Image(w, h, fill);
     }
-    void Script::save() {
+    void Script::save(){
         //save current image to PNG file
         string filename;
         input >> filename;
@@ -97,7 +96,7 @@ namespace prog {
 
     //simple image manipulations (image dimensions are not altered): -----------
 
-    void Script::invert() {
+    void Script::invert(){
         //transforms each individual pixel (r, g, b) to (255 - r, 255 - g, 255 - b)
         int height = image->height();
         int width = image->width();
