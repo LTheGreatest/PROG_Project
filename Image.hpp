@@ -6,7 +6,6 @@
 namespace prog{
   
   class Image{
-    
     private:
       int width_, height_;
       std::vector<std::vector<Color>> pixels_;  //2d vector represents the pixels in the image
