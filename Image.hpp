@@ -9,14 +9,15 @@ namespace prog
   {
   private:
     int width_, height_;
-    std::vector< std::vector<Color> > pixels_;  //2d vector represents the pixels in the image
+    std::vector<std::vector<Color>> pixels_;  //2d vector represents the pixels in the image
   public:
     Image(int w, int h, const Color &fill = {255, 255, 255});
-    ~Image();
+    ~Image(); //destructor
     int width() const;
     int height() const;
     Color &at(int x, int y);
     const Color &at(int x, int y) const;
   };
 }
+
 #endif
