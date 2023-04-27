@@ -2,11 +2,10 @@
 
 namespace prog {
 
-    //Default contructor (default color is black)
+    //default contructor (default color is black)
     Color::Color() {
         red_ = blue_ = green_ = 0;
     }
-
 
     //copy constructor
     Color::Color(const Color& other) {
@@ -15,14 +14,12 @@ namespace prog {
         this->green_ = other.green_;
     }
 
-
     //constructor using supplied values
     Color::Color(rgb_value red, rgb_value green, rgb_value blue) {
         red_ = red;
         green_ = green;
         blue_ = blue;
     }
-
 
     //getters implementantion (red, green and blue)
     rgb_value Color::red() const {
@@ -34,7 +31,6 @@ namespace prog {
     rgb_value Color::blue() const {
         return blue_;
     }
-
 
     //mutable references to individual RGB color channels
     rgb_value& Color::red()  {
@@ -48,7 +44,7 @@ namespace prog {
     }
 
 
-    //Auxiliar variables 
+    //auxiliary variables 
     const Color Color::RED (255,0, 0);
     const Color Color::GREEN(0, 255, 0);
     const Color Color::BLUE(0, 0, 255);
