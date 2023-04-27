@@ -18,7 +18,7 @@ namespace prog{
     }
   }
 
-  //destructor -> not needed in this case explain why?????
+  //destructor -> not needed in this case (no dynamically allocated memory used explicitly)
   Image::~Image(){
   }
 
