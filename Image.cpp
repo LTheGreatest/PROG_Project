@@ -20,7 +20,6 @@ namespace prog
 
   }
 
-
   //Destructor -> not needed in this case explain why?????
   Image::~Image()
   {
