@@ -13,7 +13,7 @@ namespace prog{
       ~Script(); //destructor
       void run();
 
-      //image manipulations (dimensions are not altered)
+      //commands for simple image manipulations (image dimensions are not altered)
       void invert();
       void to_gray_scale();
       void replace(const Color &rgb1, const Color &rgb2);
@@ -21,7 +21,7 @@ namespace prog{
       void h_mirror();
       void v_mirror();
       void add(const std::string &filename, const Color &other, int x, int y);
-      //dimension-changing operations
+      //commands for dimension-changing operations
       void crop(int x, int y, int w, int h);
       void rotate_left();
       void rotate_right();
@@ -29,10 +29,11 @@ namespace prog{
       Image *image; //current image
       std::ifstream input; //input stream for reading script commands
     private:
-      // Private functions
+      //private functions
       void clear_image_if_any();
-      void open();
+      //commands for initialization and I/O
       void blank();
+      void open();
       void save();
   };
 }
