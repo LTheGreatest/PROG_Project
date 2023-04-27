@@ -16,7 +16,6 @@ namespace prog{
       }
       pixels_.push_back(new_line);      //line created previously is alocated in the matrix
     }
-
   }
 
   //destructor -> not needed in this case explain why?????
@@ -35,7 +34,6 @@ namespace prog{
   Color& Image::at(int x, int y){
     return pixels_[y][x];
   }
-
 
   //read-only reference to the value of pixel (x,y)
   const Color& Image::at(int x, int y) const{
