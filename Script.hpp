@@ -32,8 +32,8 @@ namespace prog{
       //private functions
       void clear_image_if_any();
       //commands for initialization and I/O
-      void blank();
       void open();
+      void blank();
       void save();
   };
 }
