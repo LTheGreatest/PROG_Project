@@ -9,10 +9,11 @@ namespace prog
     private:
       rgb_value green_, blue_, red_;
     public:
-      Color();
-      Color(const Color& c);
+      Color(); //default constructor
+      Color(const Color& c); //copy constructor
       Color(rgb_value r, rgb_value g, rgb_value b);
-      static const Color RED, GREEN, BLUE, BLACK, WHITE; //auxiliar variables
+      static const Color RED, GREEN, BLUE, BLACK, WHITE; //auxiliary variables
+      //talvez explicar???
       rgb_value red() const;
       rgb_value& red();
       rgb_value green() const;
@@ -21,4 +22,5 @@ namespace prog
       rgb_value& blue();
   };
 }
+
 #endif
