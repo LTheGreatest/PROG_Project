@@ -13,6 +13,7 @@ namespace prog
   public:
     Image(int w, int h, const Color &fill = {255, 255, 255});
     ~Image(); //destructor
+    //getters
     int width() const;
     int height() const;
     Color &at(int x, int y);
