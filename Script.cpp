@@ -151,7 +151,7 @@ namespace prog{
         int w = new_image.width();
         for(int x = 0; x < w; x++){
             for(int y = 0; y < h; y++){
-                new_image.at(x,y) = image->at(h-y-1, x); 
+                new_image.at(x, y) = image->at(h - y - 1, x); 
             }
         }
         *image = new_image;
