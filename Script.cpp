@@ -70,6 +70,13 @@ namespace prog{
                 rotate_right();
                 continue;
             }
+            if (command == "fill"){
+                int x, y, h, w;
+                Color other;
+                input >> x >> y >> w >> h >> other;
+                fill(x, y, w, h, other);
+                continue;
+            }
         }
     }
     void Script::open(){
@@ -132,12 +139,26 @@ namespace prog{
     //???replace???
     
     //???fill???
+    void Script::fill(int x, int y, int w, int h, const Color &other){
+        //for each pixel in the rectangle switch to the "other" Color"
+        for (int line = y; line<y+h;line++){
+            for(int col = x; col < x+w;col++){
+                image->at(col, line).blue() = other.blue();
+                image->at(col, line).red() = other.red();
+                image->at(col, line).green() = other.green();
+            }
+        }
+    }
     
     //???h_mirror???
     
     //???v_mirror???
     
     //???add filename???
+    void Script::add(const std::string &filename, const Color &other, int x, int y){
+
+        
+    }
 
     //dimension-changing operations: -----------
 
