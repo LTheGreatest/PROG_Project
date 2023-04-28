@@ -19,7 +19,7 @@ TO-DO LIST:
 - Image.hpp -> feito e testado
 - Image.cpp -> feito e testado
 - Script.hpp -> feito mas suscetível a mudanças caso seja preciso
-- Script.cpp -> com funções por fazer: replace, h_mirror, v_mirror (Álvaro), fill, add (Pedro) (invert feito e testado, to_gray_scale feito e testado, funções de manipulação de dimensão feitas e testadas (crop, rotate_left e rotate_right)
+- Script.cpp -> com funções por fazer: replace, h_mirror, v_mirror (Álvaro), add (Pedro) (fill feito e testado, invert feito e testado, to_gray_scale feito e testado, funções de manipulação de dimensão feitas e testadas (crop, rotate_left e rotate_right)
 - Advanced functionality commands (ler explicações implementations): fazer quando o resto estiver bem implementado: 
   - median_filter
   - xpm2_open
