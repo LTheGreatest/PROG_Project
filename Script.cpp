@@ -55,6 +55,13 @@ namespace prog{
                 to_gray_scale();
                 continue;
             }
+            if (command == "fill"){
+                int x, y, h, w;
+                Color other;
+                input >> x >> y >> w >> h >> other;
+                fill(x, y, w, h, other);
+                continue;
+            }
             //commands for dimension-changing operations
             if(command == "crop"){
                 int x, y, w, h;
@@ -68,13 +75,6 @@ namespace prog{
             }
             if(command == "rotate_right"){
                 rotate_right();
-                continue;
-            }
-            if (command == "fill"){
-                int x, y, h, w;
-                Color other;
-                input >> x >> y >> w >> h >> other;
-                fill(x, y, w, h, other);
                 continue;
             }
         }
