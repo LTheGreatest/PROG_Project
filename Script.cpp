@@ -62,6 +62,14 @@ namespace prog{
                 fill(x, y, w, h, other);
                 continue;
             }
+            if (command == "add"){
+                string filename;
+                Color other;
+                int x,y;
+                input >> filename >> other >> x >> y;
+                add(filename, other, x,  y);
+                continue;
+            }
             //commands for dimension-changing operations
             if(command == "crop"){
                 int x, y, w, h;
