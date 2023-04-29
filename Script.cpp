@@ -164,8 +164,18 @@ namespace prog{
     
     //???add filename???
     void Script::add(const std::string &filename, const Color &other, int x, int y){
-
-        
+        //get the image inside of the file
+        Image *copy;
+        copy = loadFromPNG(filename);
+        //only get the pixels that are not "neutral"
+        for (int line = 0 ; line < copy->height();line++){    
+            for (int col = 0 ; col < copy->width();col++){
+                if (copy->at(col,line).red() == other.red() and copy->at(col,line).blue() == other.blue() and copy->at(col,line).green() == other.green());
+                else  image->at(x+col,y+line) = copy->at(col,line);
+            }
+        }
+        //delete the created image from the file to avoid memory leaks :)
+        delete copy;
     }
 
     //dimension-changing operations: -----------
