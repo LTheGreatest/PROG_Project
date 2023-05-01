@@ -56,7 +56,9 @@ namespace prog{
                 continue;
             }
             if(command == "replace"){
-                replace();
+                Color a,b;
+                input >> a >> b;
+                replace(a,b);
                 continue;
             }
             if (command == "fill"){
@@ -158,17 +160,15 @@ namespace prog{
     
     void Script::replace(const Color &rgb1, const Color &rgb2){
         //replaces all (r1, g1, b1) pixels by (r2,  g2, b2)
-        if (image->at(x, y) == rgb1){
             int height = image->height();
             int width = image->width();
-            for (int yy = y; yy < height; yy++){
-                for (int xx = x; xx < width; xx++){
+            for (int yy = 0; yy < height; yy++){
+                for (int xx = 0; xx < width; xx++){
                     image->at(xx, yy).blue() = rgb2.blue();
                     image->at(xx, yy).green() = rgb2.green();
                     image->at(xx, yy).red() = rgb2.red();
                 }    
             }
-        }
     }
         
     void Script::fill(int x, int y, int w, int h, const Color &other){
@@ -182,24 +182,24 @@ namespace prog{
         }
     }
     
-    void Script::h_mirror{
+    void Script::h_mirror(){
         //mirror image horizontally
         int height = image->height();
         int width = image->width();
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width / 2; x++){
-                image->at(x, y) = image->at(width() - 1 - x, y);
+                image->at(x, y) = image->at(width - 1 - x, y);
             }
         }
     }
         
-    void Script::v_mirror{
+    void Script::v_mirror(){
         //mirror image vertically
         int height = image->height();
         int width = image->width();
         for (int y = 0; y < height / 2; y++){
             for (int x = 0; x < width; x++){
-                image->at(x, y) = image->at(x, height() - 1 - y);
+                image->at(x, y) = image->at(x, height - 1 - y);
             }
         }
     }
