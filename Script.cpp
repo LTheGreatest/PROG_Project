@@ -144,13 +144,25 @@ namespace prog{
         }
     }
     
-    //???replace???
-    
-    //???fill???
+    void Script::replace(const Color &rgb1, const Color &rgb2){
+        //replaces all (r1, g1, b1) pixels by (r2,  g2, b2)
+        if (image->at(x, y) == rgb1){
+            int height = image->height();
+            int width = image->width();
+            for (int yy = y; yy < height; yy++){
+                for (int xx = x; xx < width; xx++){
+                    image->at(xx, yy).blue() = rgb2.blue();
+                    image->at(xx, yy).green() = rgb2.green();
+                    image->at(xx, yy).red() = rgb2.red();
+                }    
+            }
+        }
+    }
+        
     void Script::fill(int x, int y, int w, int h, const Color &other){
         //for each pixel in the rectangle switch to the "other" Color"
-        for (int line = y; line<y+h;line++){
-            for(int col = x; col < x+w;col++){
+        for (int line = y; line < y + h; line++){
+            for(int col = x; col < x + w; col++){
                 image->at(col, line).blue() = other.blue();
                 image->at(col, line).red() = other.red();
                 image->at(col, line).green() = other.green();
@@ -158,23 +170,40 @@ namespace prog{
         }
     }
     
-    //???h_mirror???
+    void Script::h_mirror{
+        //mirror image horizontally
+        int height = image->height();
+        int width = image->width();
+        for (int y = 0; y < height; y++){
+            for (int x = 0; x < width / 2; x++){
+                image->at(x, y) = image->at(width() - 1 - x, y);
+            }
+        }
+    }
+        
+    void Script::v_miror{
+        //mirror image vertically
+        int height = image->height();
+        int width = image->width();
+        for (int y = 0; y < height / 2; y++){
+            for (int x = 0; x < width; x++){
+                image->at(x, y) = image->at(x, height() - 1 - y);
+            }
+        }
+    }
     
-    //???v_mirror???
-    
-    //???add filename???
     void Script::add(const std::string &filename, const Color &other, int x, int y){
         //get the image inside of the file
         Image *copy;
         copy = loadFromPNG(filename);
         //only get the pixels that are not "neutral"
-        for (int line = 0 ; line < copy->height();line++){    
-            for (int col = 0 ; col < copy->width();col++){
-                if (copy->at(col,line).red() == other.red() and copy->at(col,line).blue() == other.blue() and copy->at(col,line).green() == other.green());
-                else  image->at(x+col,y+line) = copy->at(col,line);
+        for (int line = 0 ; line < copy->height(); line++){    
+            for (int col = 0 ; col < copy->width(); col++){
+                if (copy->at(col, line).red() == other.red() and copy->at(col, line).blue() == other.blue() and copy->at(col, line).green() == other.green());
+                else  image->at(x + col, y + line) = copy->at(col, line);
             }
         }
-        //delete the created image from the file to avoid memory leaks :)
+        //delete the created image from the file to avoid memory leaks
         delete copy;
     }
 
