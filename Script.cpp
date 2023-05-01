@@ -193,7 +193,7 @@ namespace prog{
         }
     }
         
-    void Script::v_miror{
+    void Script::v_mirror{
         //mirror image vertically
         int height = image->height();
         int width = image->width();
