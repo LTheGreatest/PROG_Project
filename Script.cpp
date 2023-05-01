@@ -55,11 +55,23 @@ namespace prog{
                 to_gray_scale();
                 continue;
             }
+            if(command == "replace"){
+                replace();
+                continue;
+            }
             if (command == "fill"){
                 int x, y, h, w;
                 Color other;
                 input >> x >> y >> w >> h >> other;
                 fill(x, y, w, h, other);
+                continue;
+            }
+            if(command == "h_mirror"){
+                h_mirror();
+                continue;
+            }
+            if(command == "v_mirror"){
+                v_mirror();
                 continue;
             }
             if (command == "add"){
