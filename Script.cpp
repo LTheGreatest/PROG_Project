@@ -160,26 +160,26 @@ namespace prog{
     
     void Script::replace(const Color &rgb1, const Color &rgb2){
         //replaces all (r1, g1, b1) pixels by (r2,  g2, b2)
-            int height = image->height();
-            int width = image->width();
-            for (int yy = 0; yy < height; yy++){
-                for (int xx = 0; xx < width; xx++){
-                    if(image->at(xx, yy).blue() == rgb1.blue() && image->at(xx, yy).green() == rgb1.green() && image->at(xx, yy).red() == rgb1.red()){
-                        image->at(xx, yy).blue() = rgb2.blue();
-                        image->at(xx, yy).green() = rgb2.green();
-                        image->at(xx, yy).red() = rgb2.red();
-                    }
-                }    
-            }
+        int height = image->height();
+        int width = image->width();
+        for (int yy = 0; yy < height; yy++){
+            for (int xx = 0; xx < width; xx++){
+                if(image->at(xx, yy).blue() == rgb1.blue() && image->at(xx, yy).green() == rgb1.green() && image->at(xx, yy).red() == rgb1.red()){
+                    image->at(xx, yy).blue() = rgb2.blue();
+                    image->at(xx, yy).green() = rgb2.green();
+                    image->at(xx, yy).red() = rgb2.red();
+                }
+            }    
+        }
     }
         
     void Script::fill(int x, int y, int w, int h, const Color &other){
         //for each pixel in the rectangle switch to the "other" Color"
         for (int line = y; line < y + h; line++){
             for(int col = x; col < x + w; col++){
-                    image->at(col, line).blue() = other.blue();
-                    image->at(col, line).red() = other.red();
-                    image->at(col, line).green() = other.green();
+                image->at(col, line).blue() = other.blue();
+                image->at(col, line).red() = other.red();
+                image->at(col, line).green() = other.green();
             }
         }
     }
