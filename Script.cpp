@@ -175,31 +175,39 @@ namespace prog{
         //for each pixel in the rectangle switch to the "other" Color"
         for (int line = y; line < y + h; line++){
             for(int col = x; col < x + w; col++){
-                image->at(col, line).blue() = other.blue();
-                image->at(col, line).red() = other.red();
-                image->at(col, line).green() = other.green();
+                if(image->at(xx, yy).blue() == rgb1.blue() && image->at(xx, yy).green() == rgb1.green() && image->at(xx, yy).red() == rgb1.red()){
+                    image->at(col, line).blue() = other.blue();
+                    image->at(col, line).red() = other.red();
+                    image->at(col, line).green() = other.green();
+                }
             }
         }
     }
     
     void Script::h_mirror(){
         //mirror image horizontally
+        Color aux;
         int height = image->height();
         int width = image->width();
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width / 2; x++){
-                image->at(x, y) = image->at(width - 1 - x, y);
+                aux = image->at(width - 1 - x, y);
+                image->at(width - 1 - x, y) = image->at(x, y);
+                image->at(x, y) = aux;
             }
         }
     }
         
     void Script::v_mirror(){
         //mirror image vertically
+        Color aux;
         int height = image->height();
         int width = image->width();
         for (int y = 0; y < height / 2; y++){
             for (int x = 0; x < width; x++){
-                image->at(x, y) = image->at(x, height - 1 - y);
+                aux = image->at(x, height - 1 - y);
+                image->at(x,height - 1 - y) = image->at(x,y);
+                image->at(x,y) = aux;
             }
         }
     }
