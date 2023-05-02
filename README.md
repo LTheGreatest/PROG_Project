@@ -18,7 +18,7 @@ TO-DO LIST:
 - Color.cpp -> feito e testado
 - Image.hpp -> feito e testado
 - Image.cpp -> feito e testado
-- Script.hpp -> feito mas suscetível a mudanças caso seja preciso
+- Script.hpp -> feito e testado
 - Script.cpp -> tudo feito e testado
 - Advanced functionality commands (ler explicações implementations): fazer quando o resto estiver bem implementado: 
   - median_filter
