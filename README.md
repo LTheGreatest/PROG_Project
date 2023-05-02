@@ -25,5 +25,7 @@ TO-DO LIST:
   - xpm2_open
   - xpm2_save (parecidas com o open e save do script???)
   - XPM2.hpp -> não é preciso alterar
-  - XPM2.cpp -> por fazer  
+  - XPM2.cpp -> por fazer
+- Por codigo consistente (i.e variaveis), 
+- Tentar pr tudo mais eficiente ???
 
