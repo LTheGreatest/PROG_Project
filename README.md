@@ -21,7 +21,7 @@ TO-DO LIST:
 - Script.hpp -> feito e testado
 - Script.cpp -> tudo feito e testado
 - Advanced functionality commands (ler explicações implementations): fazer quando o resto estiver bem implementado: 
-  - median_filter
+  - median_filter -> feito e testado (muito pesado, necessita otimização quando estiver tudo concluido)
   - xpm2_open
   - xpm2_save (parecidas com o open e save do script???)
   - XPM2.hpp -> não é preciso alterar
