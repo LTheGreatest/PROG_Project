@@ -24,6 +24,8 @@ namespace prog{
       void crop(int x, int y, int w, int h);
       void rotate_left();
       void rotate_right();
+      //Advanced functionality
+      void median_filter(int ws);
     private:
       Image *image; //current image
       std::ifstream input; //input stream for reading script commands

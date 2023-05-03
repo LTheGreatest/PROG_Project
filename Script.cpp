@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 #include "Script.hpp"
 #include "PNG.hpp"
 #include "XPM2.hpp"
@@ -97,6 +98,13 @@ namespace prog{
             }
             if(command == "rotate_right"){
                 rotate_right();
+                continue;
+            }
+            //commands for advanced functionality
+            if(command == "median_filter"){
+                int ws;
+                input >> ws;
+                median_filter(ws);
                 continue;
             }
         }
@@ -265,5 +273,54 @@ namespace prog{
             }
         }
         *image = new_image;
-    }  
+    }
+
+    //Advanced functionality : ---------------------
+
+    void Script::median_filter(int ws){
+        //Apply a median filter with window size ws >= 3 to the current image
+        int dist = ws/2;    //neighbours max distance (auxiliar value)
+        Image new_image{image->width(), image->height()};
+        for(int y = 0, len_y = image->height(); y < len_y; y++ ){
+            for(int x = 0, len_x = image->width(); x < len_x; x++){
+                vector<rgb_value> red_vizinhos;
+                vector<rgb_value> blue_vizinhos;
+                vector<rgb_value> green_vizinhos;
+                //obtain the neighbouring pixels
+                for(int ny = y - dist; ny <= y + dist; ny ++ ){
+                    // y bounds
+                    if ((ny < 0) || (ny >= len_y))
+                        continue;
+                    for(int nx = x - dist; nx <= x + dist; nx ++){
+                        // x bounds
+                        if((nx < 0) || (nx >= len_x))
+                            continue;
+                        red_vizinhos.push_back(image->at(nx, ny).red());
+                        blue_vizinhos.push_back(image->at(nx,ny).blue());
+                        green_vizinhos.push_back(image->at(nx,ny).green());
+                    }
+                }
+                //sort neighboring pixels
+                sort(red_vizinhos.begin(), red_vizinhos.end());
+                sort(blue_vizinhos.begin(), blue_vizinhos.end());
+                sort(green_vizinhos.begin(), green_vizinhos.end());
+                if (red_vizinhos.size() % 2 == 0){
+                    // median pixels when number of neighbours is even
+                    int red = (red_vizinhos[red_vizinhos.size()/2] +  red_vizinhos[red_vizinhos.size()/2 - 1]) / 2;
+                    int blue = (blue_vizinhos[blue_vizinhos.size()/2] +  blue_vizinhos[blue_vizinhos.size()/2 - 1]) / 2;
+                    int green = (green_vizinhos[green_vizinhos.size()/2] +  green_vizinhos[green_vizinhos.size()/2 - 1]) / 2;
+                    new_image.at(x,y).red() = red;
+                    new_image.at(x,y).blue() = blue;
+                    new_image.at(x,y).green() = green;
+                }
+                else{
+                    // median pixels when number of neighbours is odd
+                new_image.at(x,y).red() = red_vizinhos[red_vizinhos.size()/2];
+                new_image.at(x,y).blue() = blue_vizinhos[blue_vizinhos.size()/2];
+                new_image.at(x,y).green() = green_vizinhos[green_vizinhos.size()/2];
+                }
+            }
+        }
+        *image = new_image;
+    }
 }
