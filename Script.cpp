@@ -131,7 +131,7 @@ namespace prog{
         saveToPNG(filename, image);
     }
 
-    //simple image manipulations (image dimensions are not altered): -----------
+    //simple image manipulations (image dimensions are not altered): ---------------------
 
     void Script::invert(){
         //transforms each individual pixel (r, g, b) to (255 - r, 255 - g, 255 - b)
@@ -235,7 +235,7 @@ namespace prog{
         delete copy;
     }
 
-    //dimension-changing operations: -----------
+    //dimension-changing operations: ---------------------
 
     void Script::crop(int x, int y, int w, int h){
         //reduce the image to all pixels contained in the rectangle
@@ -275,29 +275,29 @@ namespace prog{
         *image = new_image;
     }
 
-    //Advanced functionality : ---------------------
+    //advanced functionality: ---------------------
 
     void Script::median_filter(int ws){
-        //Apply a median filter with window size ws >= 3 to the current image
-        int dist = ws/2;    //neighbours max distance (auxiliar value)
+        //apply a median filter with window size ws >= 3 to the current image
+        int dist = ws / 2;    //neighbours max distance (auxiliary value)
         Image new_image{image->width(), image->height()};
-        for(int y = 0, len_y = image->height(); y < len_y; y++ ){
-            for(int x = 0, len_x = image->width(); x < len_x; x++){
+        for (int y = 0, len_y = image->height(); y < len_y; y++){
+            for (int x = 0, len_x = image->width(); x < len_x; x++){
                 vector<rgb_value> red_vizinhos;
                 vector<rgb_value> blue_vizinhos;
                 vector<rgb_value> green_vizinhos;
                 //obtain the neighbouring pixels
                 for(int ny = y - dist; ny <= y + dist; ny ++ ){
-                    // y bounds
+                    //y bounds
                     if ((ny < 0) || (ny >= len_y))
                         continue;
-                    for(int nx = x - dist; nx <= x + dist; nx ++){
-                        // x bounds
+                    for(int nx = x - dist; nx <= x + dist; nx++){
+                        //x bounds
                         if((nx < 0) || (nx >= len_x))
                             continue;
                         red_vizinhos.push_back(image->at(nx, ny).red());
-                        blue_vizinhos.push_back(image->at(nx,ny).blue());
-                        green_vizinhos.push_back(image->at(nx,ny).green());
+                        blue_vizinhos.push_back(image->at(nx, ny).blue());
+                        green_vizinhos.push_back(image->at(nx, ny).green());
                     }
                 }
                 //sort neighboring pixels
@@ -305,19 +305,19 @@ namespace prog{
                 sort(blue_vizinhos.begin(), blue_vizinhos.end());
                 sort(green_vizinhos.begin(), green_vizinhos.end());
                 if (red_vizinhos.size() % 2 == 0){
-                    // median pixels when number of neighbours is even
-                    int red = (red_vizinhos[red_vizinhos.size()/2] +  red_vizinhos[red_vizinhos.size()/2 - 1]) / 2;
-                    int blue = (blue_vizinhos[blue_vizinhos.size()/2] +  blue_vizinhos[blue_vizinhos.size()/2 - 1]) / 2;
-                    int green = (green_vizinhos[green_vizinhos.size()/2] +  green_vizinhos[green_vizinhos.size()/2 - 1]) / 2;
-                    new_image.at(x,y).red() = red;
-                    new_image.at(x,y).blue() = blue;
-                    new_image.at(x,y).green() = green;
+                    //median pixels when number of neighbours is even
+                    int red = (red_vizinhos[red_vizinhos.size() / 2] +  red_vizinhos[red_vizinhos.size() / 2 - 1]) / 2;
+                    int blue = (blue_vizinhos[blue_vizinhos.size() / 2] +  blue_vizinhos[blue_vizinhos.size() / 2 - 1]) / 2;
+                    int green = (green_vizinhos[green_vizinhos.size() / 2] +  green_vizinhos[green_vizinhos.size() / 2 - 1]) / 2;
+                    new_image.at(x, y).red() = red;
+                    new_image.at(x, y).blue() = blue;
+                    new_image.at(x, y).green() = green;
                 }
                 else{
-                    // median pixels when number of neighbours is odd
-                new_image.at(x,y).red() = red_vizinhos[red_vizinhos.size()/2];
-                new_image.at(x,y).blue() = blue_vizinhos[blue_vizinhos.size()/2];
-                new_image.at(x,y).green() = green_vizinhos[green_vizinhos.size()/2];
+                    //median pixels when number of neighbours is odd
+                new_image.at(x, y).red() = red_vizinhos[red_vizinhos.size() / 2];
+                new_image.at(x, y).blue() = blue_vizinhos[blue_vizinhos.size() / 2];
+                new_image.at(x, y).green() = green_vizinhos[green_vizinhos.size() / 2];
                 }
             }
         }
