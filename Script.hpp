@@ -24,7 +24,7 @@ namespace prog{
       void crop(int x, int y, int w, int h);
       void rotate_left();
       void rotate_right();
-      //Advanced functionality
+      //advanced functionality
       void median_filter(int ws);
     private:
       Image *image; //current image
