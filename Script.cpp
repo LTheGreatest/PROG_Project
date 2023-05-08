@@ -1,5 +1,8 @@
 #include <iostream>
+#include <map>
+#include <string>
 #include <fstream>
+#include <sstream>
 #include <algorithm>
 #include "Script.hpp"
 #include "PNG.hpp"
@@ -105,6 +108,10 @@ namespace prog{
                 int ws;
                 input >> ws;
                 median_filter(ws);
+                continue;
+            }
+            if (command == "xpm2_open"){
+                xpm2_open();
                 continue;
             }
         }
@@ -322,5 +329,11 @@ namespace prog{
             }
         }
         *image = new_image;
+    }
+    void Script::xpm2_open(){
+        clear_image_if_any();
+        string filename;
+        input >> filename;
+        image = loadFromXPM2(filename);
     }
 }
