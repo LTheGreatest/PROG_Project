@@ -1,6 +1,7 @@
 #ifndef __prog_Script_hpp__
 #define __prog_Script_hpp__
 #include <string>
+#include "Color.hpp"
 #include <fstream>
 #include "Image.hpp"
 
@@ -12,6 +13,7 @@ namespace prog{
       Script(const std::string &filename);
       ~Script(); //destructor
       void run();
+
       //commands for simple image manipulations (image dimensions are not altered)
       void invert();
       void to_gray_scale();
@@ -26,6 +28,7 @@ namespace prog{
       void rotate_right();
       //advanced functionality
       void median_filter(int ws);
+      void xpm2_open();
     private:
       Image *image; //current image
       std::ifstream input; //input stream for reading script commands
