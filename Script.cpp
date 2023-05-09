@@ -114,6 +114,10 @@ namespace prog{
                 xpm2_open();
                 continue;
             }
+            if(command == "xpm2_save"){
+                xpm2_save();
+                continue;
+            }
         }
     }
     void Script::open(){
@@ -331,9 +335,16 @@ namespace prog{
         *image = new_image;
     }
     void Script::xpm2_open(){
+        //Read image stored in the XPM2 file format
         clear_image_if_any();
         string filename;
         input >> filename;
         image = loadFromXPM2(filename);
     }
+    void Script::xpm2_save(const string &filename){
+        //Save image to XPM2 file format
+        string filename;
+        input >> filename;
+        saveToXPM2(filename,image);
+    } 
 }
