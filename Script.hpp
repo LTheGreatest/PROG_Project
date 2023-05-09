@@ -29,6 +29,7 @@ namespace prog{
       //advanced functionality
       void median_filter(int ws);
       void xpm2_open();
+      void xpm2_save();
     private:
       Image *image; //current image
       std::ifstream input; //input stream for reading script commands
