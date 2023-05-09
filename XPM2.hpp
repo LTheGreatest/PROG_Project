@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Image.hpp"
+
 namespace prog {
     unsigned long value(const char c1);
     Color hexatocolor(const std::string& hexadecimal);
