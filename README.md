@@ -10,8 +10,9 @@ NOTAS: COMENTAR BEM CODIGO + VARIAVEIS EXPLICITAS + CODIGO LEGIVEL
 CUIDADO COM PLAGIO + ver comentário de código + código coerente
 SABER EXPLICAR BEM CODIGO TODO
 
-ATENÇÃO:
-No Script.cpp é necessário no run acrecentar o comando que permite executar cada função se não o código falha!!!
+Dps sugeria fazermos um recap de todo o código para comentar tudo direitinho (se for preciso), ver como está tudo claro e percebido e tentar melhorar
+- Por codigo consistente (i.e variaveis), 
+- Tentar pr tudo mais eficiente ???
 
 TO-DO LIST:
 - Color.hpp -> feito e testado
@@ -20,12 +21,9 @@ TO-DO LIST:
 - Image.cpp -> feito e testado
 - Script.hpp -> feito e testado
 - Script.cpp -> tudo feito e testado
-- Advanced functionality commands (ler explicações implementations): fazer quando o resto estiver bem implementado: 
+- Advanced functionality commands:
   - median_filter -> feito e testado (muito pesado, necessita otimização quando estiver tudo concluido), melhorar variáveis
   - xpm2_open
   - xpm2_save (parecidas com o open e save do script???)
   - XPM2.hpp -> não é preciso alterar
   - XPM2.cpp -> por fazer
-- Por codigo consistente (i.e variaveis), 
-- Tentar pr tudo mais eficiente ???
-
