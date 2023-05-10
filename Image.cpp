@@ -6,7 +6,6 @@ namespace prog{
   
   //constructor -> image with width w, height h and all pixels set to color fill
   Image::Image(int w, int h, const Color &fill){
-    
     width_ = w;
     height_ = h;
     for (int y = 0; y < height_; y ++){ //range of values of y needed
