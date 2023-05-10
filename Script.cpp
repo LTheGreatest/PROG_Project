@@ -341,7 +341,7 @@ namespace prog{
         input >> filename;
         image = loadFromXPM2(filename);
     }
-    void Script::xpm2_save(const string &filename){
+    void Script::xpm2_save(const string& filename){
         //save image to XPM2 file format
         string filename;
         input >> filename;
