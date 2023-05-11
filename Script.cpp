@@ -315,7 +315,7 @@ namespace prog{
                         green_neighbours.push_back(image->at(nx, ny).green());
                     }
                 }
-                //sort neighboring pixels
+                //sort neighboring pixels RGB values
                 sort(red_neighbours.begin(), red_neighbours.end());
                 sort(blue_neighbours.begin(), blue_neighbours.end());
                 sort(green_neighbours.begin(), green_neighbours.end());
