@@ -238,7 +238,8 @@ namespace prog{
         //only get the pixels that are not "neutral"
         for (int line = 0 ; line < copy->height(); line++){    
             for (int col = 0 ; col < copy->width(); col++){
-                if (copy->at(col, line).red() == other.red() and copy->at(col, line).blue() == other.blue() and copy->at(col, line).green() == other.green());
+                if (copy->at(col, line).red() == other.red() and copy->at(col, line).blue() == other.blue() and copy->at(col, line).green() == other.green())
+                    continue;
                 else  image->at(x + col, y + line) = copy->at(col, line);
             }
         }
