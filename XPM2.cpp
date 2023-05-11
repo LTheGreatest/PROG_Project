@@ -36,6 +36,32 @@ namespace prog {
         b = value(c5) * 16 + value(c6);
         return Color(r, g, b);  //create a color with them
     }
+
+    string colortohexa(const Color& rgb){
+        string hexa;
+        hexa.push_back('#'); //insert "#" at the begining
+        string s1, s2, s3;
+        int red = rgb.red();
+        int green = rgb.green();
+        int blue = rgb.blue();
+        //convert red
+        ostringstream out1;
+        out1 << setfill('0') << setw(2) << hex << red;
+        s1 = out1.str();
+        //convert green
+        ostringstream out2;
+        out2 << setfill('0') << setw(2) << hex << green;
+        s2 = out2.str();
+        //convert blue
+        ostringstream out3;
+        out3 << setfill('0') << setw(2) << hex << blue;
+        s3 = out3.str();
+        //append the values
+        hexa.append(s1);
+        hexa.append(s2);
+        hexa.append(s3);
+        return hexa;
+    }
     
     Image* loadFromXPM2(const string& file){
         int w, h, n, c;
@@ -70,6 +96,42 @@ namespace prog {
     }
 
     void saveToXPM2(const std::string& file, const Image* image){
-
+        ofstream out(file);
+        out << "! XMP2" << "\n";
+        int w, h, n, c = 1;
+        w = image->width();
+        h = image->height();
+        //characters used to encode colors (16 colors) 
+        vector<char> color_char {
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 
+            'i', 'j', 'k', 'l', 'm','n', 'o', 'p'
+        };
+       map <Color,char> colordict; //operator< implemented for Color (more info Color.hpp=
+        //find number of different colors
+        int idx = 0; //auxiliary value used to acess color_char and store number of colors used
+        for (int y = 0; y < h; y++){
+            for (int x = 0; x < w; x++){
+                auto search = colordict.find(image->at(x,y));
+                if(search == colordict.end()){
+                    colordict.insert({image->at(x,y), color_char[idx]});
+                    idx++;
+                }
+            }
+        }
+        n = idx; //idx has the number of colors used
+        out << w << ' '<< h << ' ' << n << ' ' << c <<'\n';
+        // fill lines with char/color encoding
+        for (auto i = colordict.begin(); i != colordict.end(); i++){
+            char character = i->second;
+            string hexa = colortohexa(i->first); 
+            out << character << ' ' << 'c' << ' ' << hexa << '\n';
+        }
+        // fill lines with characters
+        for(int y = 0; y < h; y++){
+            for(int x = 0; x < w; x++){
+                out << colordict[image->at(x,y)];
+            }
+            out << '\n';
+        }
     }
 }
