@@ -1,4 +1,13 @@
 #include "Color.hpp"
+#include "XPM2.hpp"
+#include <iostream>
+#include <map>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iomanip>
+#include <algorithm>
 
 namespace prog{
 
@@ -49,4 +58,22 @@ namespace prog{
     const Color Color::BLUE(0, 0, 255);
     const Color Color::WHITE(255, 255, 255);
     const Color Color::BLACK(0, 0, 0);
+
+    //operator needed in XPM2.cpp -> saveToXPM2 (needed in map <Color,char> colordict) 
+    bool operator<(const Color& a, const Color& b){
+        if(a.red() < b.red()){
+            return true;
+        }
+        if(a.red() == b.red()){
+            if(a.green() < b.green() ){
+                return true;
+            }
+            if(a.green() == b.green()){
+                if(a.blue() < b.blue()){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
