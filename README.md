@@ -6,15 +6,13 @@ e outras funções para o formato XMP2.
 Espera-se que os elementos que participam neste trabalho não façam o obséquio de javardar na sua execução!!!
 *//
   
-NOTAS: COMENTAR BEM CODIGO + VARIAVEIS EXPLICITAS + CODIGO LEGIVEL
-CUIDADO COM PLAGIO + ver comentário de código + código coerente
-SABER EXPLICAR BEM CODIGO TODO
+SABER EXPLICAR BEM CODIGO TODO!!!
 
-Dps sugeria fazermos um recap de todo o código para comentar tudo direitinho (se for preciso), ver como está tudo claro e percebido e tentar melhorar
-- Por codigo consistente (i.e variaveis), 
-- Tentar pr tudo mais eficiente ???
+!--> Fazer um recap de todo o código para comentar tudo direitinho (se for preciso), ver se está tudo claro e percebido e tentar melhorar:
+- Por codigo consistente/coerente (i.e variaveis), mais legível (variáveis explicitas) e comentar bem
+- Tentar por tudo mais eficiente ???
 
-TO-DO LIST:
+TO-DO LIST: UDO FEITO
 - Color.hpp -> feito e testado
 - Color.cpp -> feito e testado
 - Image.hpp -> feito e testado
@@ -23,7 +21,6 @@ TO-DO LIST:
 - Script.cpp -> tudo feito e testado
 - Advanced functionality commands:
   - median_filter -> feito e testado (muito pesado, necessita otimização quando estiver tudo concluido), melhorar variáveis
-  - xpm2_open
-  - xpm2_save (parecidas com o open e save do script???)
-  - XPM2.hpp -> não é preciso alterar
-  - XPM2.cpp -> por fazer
+  - xpm2_open -> feito e testado
+  - xpm2_save -> feito e testado 
+  - XPM2.cpp -> feito
