@@ -296,6 +296,7 @@ namespace prog{
         // Loop through each pixel in the image
         for (int y = 0, len_y = image->height(); y < len_y; y++){
             for (int x = 0, len_x = image->width(); x < len_x; x++){
+                //RGB vectors
                 vector<rgb_value> red_neighbours;
                 vector<rgb_value> blue_neighbours;
                 vector<rgb_value> green_neighbours;
