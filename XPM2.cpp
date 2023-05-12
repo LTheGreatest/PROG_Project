@@ -106,7 +106,7 @@ namespace prog {
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 
             'i', 'j', 'k', 'l', 'm','n', 'o', 'p'
         };
-       map <Color,char> colordict; //operator< implemented for Color (more info Color.hpp=
+       map <Color,char> colordict; //operator< implemented for Color (more info Color.cpp)
         //find number of different colors
         int idx = 0; //auxiliary value used to acess color_char and store number of colors used
         for (int y = 0; y < h; y++){
