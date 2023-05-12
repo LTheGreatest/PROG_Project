@@ -11,8 +11,9 @@ SABER EXPLICAR BEM CODIGO TODO!!!
 !--> Fazer um recap de todo o código para comentar tudo direitinho (se for preciso), ver se está tudo claro e percebido e tentar melhorar:
 - Por codigo consistente/coerente (i.e variaveis), mais legível (variáveis explicitas) e comentar bem
 - Tentar por tudo mais eficiente ???
+- Ter especial atenção ao código mais ineficiente (median_filter)
 
-TO-DO LIST: UDO FEITO
+TO-DO LIST: TUDO FEITO
 - Color.hpp -> feito e testado
 - Color.cpp -> feito e testado
 - Image.hpp -> feito e testado
