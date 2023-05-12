@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <iomanip>
 #include "Script.hpp"
 #include "PNG.hpp"
 #include "XPM2.hpp"
