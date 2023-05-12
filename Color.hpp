@@ -5,6 +5,7 @@ namespace prog{
   
   typedef unsigned char rgb_value;
   class Color{
+    friend bool operator<(const Color& a, const Color& b);
     private:
       rgb_value green_, blue_, red_;
     public:
