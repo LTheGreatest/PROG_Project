@@ -340,6 +340,7 @@ namespace prog{
         // Replace the original image with the new image
         *image = new_image;
     }
+    
     void Script::xpm2_open(){
         //read image stored in the XPM2 file format
         clear_image_if_any();
@@ -347,6 +348,7 @@ namespace prog{
         input >> filename;
         image = loadFromXPM2(filename);
     }
+    
     void Script::xpm2_save(const string& filename){
         //save image to XPM2 file format
         string filename;
