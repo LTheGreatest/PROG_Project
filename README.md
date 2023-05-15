@@ -26,6 +26,32 @@ TO-DO LIST: TUDO FEITO
   - xpm2_save -> feito e testado 
   - XPM2.cpp -> feito
 
+ERROS: 
+
+	
+***Erro***
+Script.cpp:352:10: error: no declaration matches ‘void prog::Script::xpm2_save(const string&)’
+  352 |     void Script::xpm2_save(const string& filename){
+      |          ^~~~~~
+In file included from Script.cpp:8:
+Script.hpp:31:12: note: candidate is: ‘void prog::Script::xpm2_save()’
+   31 |       void xpm2_save();
+      |            ^~~~~~~~~
+Script.hpp:10:9: note: ‘class prog::Script’ defined here
+   10 |   class Script{
+      |         ^~~~~~
+XPM2.cpp: In function ‘std::string prog::colortohexa(const prog::Color&)’:
+XPM2.cpp:49:17: error: ‘setfill’ was not declared in this scope
+   49 |         out1 << setfill('0') << setw(2) << hex << red;
+      |                 ^~~~~~~
+XPM2.cpp:49:33: error: ‘setw’ was not declared in this scope; did you mean ‘getw’?
+   49 |         out1 << setfill('0') << setw(2) << hex << red;
+      |                                 ^~~~
+      |                                 getw
+make: *** [Makefile:40: runscript] Error 1
+
+
+
 
 SUBMISSION INFORMATION
 ======================
