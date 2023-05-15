@@ -294,7 +294,7 @@ namespace prog{
         //apply a median filter with window size ws >= 3 to the current image
         int dist = ws / 2;    //neighbours max distance (auxiliary value)
         Image new_image{image->width(), image->height()};
-        // Loop through each pixel in the image
+        //loop through each pixel in the image
         for (int y = 0, len_y = image->height(); y < len_y; y++){
             for (int x = 0, len_x = image->width(); x < len_x; x++){
                 //RGB vectors
@@ -310,7 +310,7 @@ namespace prog{
                         //x bounds
                         if((nx < 0) || (nx >= len_x))
                             continue;
-                        // Add the RGB values of the neighbor pixels to their respective vectors
+                        //add the RGB values of the neighbor pixels to their respective vectors
                         red_neighbours.push_back(image->at(nx, ny).red());
                         blue_neighbours.push_back(image->at(nx, ny).blue());
                         green_neighbours.push_back(image->at(nx, ny).green());
@@ -337,7 +337,7 @@ namespace prog{
                 }
             }
         }
-        // Replace the original image with the new image
+        //replace the original image with the new image
         *image = new_image;
     }
     
