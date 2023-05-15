@@ -25,3 +25,21 @@ TO-DO LIST: TUDO FEITO
   - xpm2_open -> feito e testado
   - xpm2_save -> feito e testado 
   - XPM2.cpp -> feito
+
+
+SUBMISSION INFORMATION
+======================
+
+Group identifier: 15.02
+
+Summary of implemented features:
+- Color.hpp -> everything implemented
+- Color.cpp -> everything implemented
+- Image.hpp -> everything implemented
+- Image.cpp -> everything implemented
+- Script.hpp -> everything implemented
+- Script.cpp -> all commands implemented
+- Advanced functionality commands:
+- median_filter -> implemented in Script
+- xpm2_open -> implemented in XPM2.hpp/cpp and Script
+- xpm2_save -> implemented in XPM2.hpp/cpp and Script
