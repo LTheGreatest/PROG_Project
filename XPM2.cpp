@@ -29,9 +29,7 @@ namespace prog {
         istringstream in(hexadecimal);
         char c1, c2, c3, c4, c5, c6;
         in >> c1; // "#""
-        in >> c1 >> c2 >> c3 >> c4 >> c5;
-        if (in >> c6)in >> c6;
-        else c6 = '0';
+        in >> c1 >> c2 >> c3 >> c4 >> c5 >> c6;
         r = value(c1) * 16 + value(c2); //pass them to int values
         g = value(c3) * 16 + value(c4);
         b = value(c5) * 16 + value(c6);
