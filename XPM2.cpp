@@ -1,5 +1,6 @@
 #include "XPM2.hpp"
 #include <iostream>
+#include <iomanip>
 #include <map>
 #include <vector>
 #include <string>
