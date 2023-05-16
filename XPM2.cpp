@@ -100,10 +100,12 @@ namespace prog {
         int w, h, n, c = 1;
         w = image->width();
         h = image->height();
-        //characters used to encode colors (16 colors) 
+        //characters used to encode colors (32 colors) 
         vector<char> color_char {
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 
-            'i', 'j', 'k', 'l', 'm','n', 'o', 'p'
+            'i', 'j', 'k', 'l', 'm','n', 'o', 'p',
+            'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+            'y', 'z', '*', '+', '-', '.', '!', '?' 
         };
        map <Color,char> colordict; //operator< implemented for Color (more info Color.cpp)
         //find number of different colors
