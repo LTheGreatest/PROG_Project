@@ -24,8 +24,8 @@ namespace prog {
         return v;
     }
     
-    //converts hexadecimal number to Color
     Color hexatocolor(const string& hexadecimal){
+        //converts hexadecimal number to Color
         unsigned long r, g, b;
         istringstream in(hexadecimal);
         char c1, c2, c3, c4, c5, c6;
@@ -36,9 +36,9 @@ namespace prog {
         b = value(c5) * 16 + value(c6);
         return Color(r, g, b);  //create a color with them
     }
-    
-    //converts Color to hexadecimal number
+   
     string colortohexa(const Color& rgb){
+        //converts Color to hexadecimal number
         string hexa;
         hexa.push_back('#'); //insert "#" at the begining
         string s1, s2, s3;
@@ -64,8 +64,8 @@ namespace prog {
         return hexa;
     }
     
-    //used for command xpm2_open
     Image* loadFromXPM2(const string& file){
+        //used for command xpm2_open
         int w, h, n, c;
         char character, dummy;
         string hexa;
@@ -97,8 +97,8 @@ namespace prog {
         return image;
     }
     
-    ////used for command xpm2_save
     void saveToXPM2(const std::string& file, const Image* image){
+        //used for command xpm2_save
         ofstream out(file);
         out << "! XMP2" << "\n";
         int w, h, n, c = 1;
