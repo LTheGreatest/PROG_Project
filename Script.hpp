@@ -10,14 +10,14 @@ namespace prog{
   class Script{
     
     public: 
-      Script(const std::string &filename);
-      ~Script(); //destructor
+      Script(const std::string& filename);
+      ~Script(); 
       void run();
       //commands for simple image manipulations (image dimensions are not altered)
       void invert();
       void to_gray_scale();
-      void replace(const Color &rgb1, const Color &rgb2);
-      void fill(int x, int y, int w, int h, const Color &other);
+      void replace(const Color& rgb1, const Color& rgb2);
+      void fill(int x, int y, int w, int h, const Color& other);
       void h_mirror();
       void v_mirror();
       void add(const std::string &filename, const Color &other, int x, int y);
