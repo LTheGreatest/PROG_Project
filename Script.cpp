@@ -331,9 +331,9 @@ namespace prog{
                 }
                 else{
                     //median pixels when number of neighbours is odd
-                new_image->at(x, y).red() = red_neighbours[red_neighbours.size() / 2];
-                new_image->at(x, y).blue() = blue_neighbours[blue_neighbours.size() / 2];
-                new_image->at(x, y).green() = green_neighbours[green_neighbours.size() / 2];
+                    new_image->at(x, y).red() = red_neighbours[red_neighbours.size() / 2];
+                    new_image->at(x, y).blue() = blue_neighbours[blue_neighbours.size() / 2];
+                    new_image->at(x, y).green() = green_neighbours[green_neighbours.size() / 2];
                 }
             }
         }
