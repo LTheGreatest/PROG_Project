@@ -20,7 +20,7 @@ namespace prog{
       void fill(int x, int y, int w, int h, const Color& other);
       void h_mirror();
       void v_mirror();
-      void add(const std::string &filename, const Color &other, int x, int y);
+      void add(const std::string &filename, const Color& other, int x, int y);
       //commands for dimension-changing operations
       void crop(int x, int y, int w, int h);
       void rotate_left();
