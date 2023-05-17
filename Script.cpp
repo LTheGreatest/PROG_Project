@@ -293,14 +293,12 @@ namespace prog{
     void Script::median_filter(int ws){
         //apply a median filter with window size ws >= 3 to the current image
         int dist = ws / 2;    //neighbours max distance (auxiliary value)
-        Image new_image{image->width(), image->height()};
-        //loop through each pixel in the image
+        Image* new_image = new Image(image->width(), image->height());
         for (int y = 0, len_y = image->height(); y < len_y; y++){
             for (int x = 0, len_x = image->width(); x < len_x; x++){
-                //RGB vectors
-                vector<rgb_value> red_neighbours;
-                vector<rgb_value> blue_neighbours;
-                vector<rgb_value> green_neighbours;
+                vector<rgb_value> red_vizinhos;
+                vector<rgb_value> blue_vizinhos;
+                vector<rgb_value> green_vizinhos;
                 //obtain the neighbouring pixels
                 for(int ny = y - dist; ny <= y + dist; ny ++ ){
                     //y bounds
@@ -310,35 +308,34 @@ namespace prog{
                         //x bounds
                         if((nx < 0) || (nx >= len_x))
                             continue;
-                        //add the RGB values of the neighbor pixels to their respective vectors
-                        red_neighbours.push_back(image->at(nx, ny).red());
-                        blue_neighbours.push_back(image->at(nx, ny).blue());
-                        green_neighbours.push_back(image->at(nx, ny).green());
+                        red_vizinhos.push_back(image->at(nx, ny).red());
+                        blue_vizinhos.push_back(image->at(nx, ny).blue());
+                        green_vizinhos.push_back(image->at(nx, ny).green());
                     }
                 }
-                //sort neighboring pixels RGB values
-                sort(red_neighbours.begin(), red_neighbours.end());
-                sort(blue_neighbours.begin(), blue_neighbours.end());
-                sort(green_neighbours.begin(), green_neighbours.end());
-                if (red_neighbours.size() % 2 == 0){
+                //sort neighboring pixels
+                sort(red_vizinhos.begin(), red_vizinhos.end());
+                sort(blue_vizinhos.begin(), blue_vizinhos.end());
+                sort(green_vizinhos.begin(), green_vizinhos.end());
+                if (red_vizinhos.size() % 2 == 0){
                     //median pixels when number of neighbours is even
-                    int red = (red_neighbours[red_neighbours.size() / 2] +  red_neighbours[red_neighbours.size() / 2 - 1]) / 2;
-                    int blue = (blue_neighbours[blue_neighbours.size() / 2] +  blue_neighbours[blue_neighbours.size() / 2 - 1]) / 2;
-                    int green = (green_neighbours[green_neighbours.size() / 2] +  green_neighbours[green_neighbours.size() / 2 - 1]) / 2;
-                    new_image.at(x, y).red() = red;
-                    new_image.at(x, y).blue() = blue;
-                    new_image.at(x, y).green() = green;
+                    int red = (red_vizinhos[red_vizinhos.size() / 2] +  red_vizinhos[red_vizinhos.size() / 2 - 1]) / 2;
+                    int blue = (blue_vizinhos[blue_vizinhos.size() / 2] +  blue_vizinhos[blue_vizinhos.size() / 2 - 1]) / 2;
+                    int green = (green_vizinhos[green_vizinhos.size() / 2] +  green_vizinhos[green_vizinhos.size() / 2 - 1]) / 2;
+                    new_image->at(x, y).red() = red;
+                    new_image->at(x, y).blue() = blue;
+                    new_image->at(x, y).green() = green;
                 }
                 else{
                     //median pixels when number of neighbours is odd
-                new_image.at(x, y).red() = red_neighbours[red_neighbours.size() / 2];
-                new_image.at(x, y).blue() = blue_neighbours[blue_neighbours.size() / 2];
-                new_image.at(x, y).green() = green_neighbours[green_neighbours.size() / 2];
+                new_image->at(x, y).red() = red_vizinhos[red_vizinhos.size() / 2];
+                new_image->at(x, y).blue() = blue_vizinhos[blue_vizinhos.size() / 2];
+                new_image->at(x, y).green() = green_vizinhos[green_vizinhos.size() / 2];
                 }
             }
         }
-        //replace the original image with the new image
-        *image = new_image;
+        *image = *new_image;
+        delete new_image;
     }
     
     void Script::xpm2_open(){
