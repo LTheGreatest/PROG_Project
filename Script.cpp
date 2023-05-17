@@ -342,18 +342,18 @@ namespace prog{
         delete new_image;
     }
     
-    ////calls Image *loadFromXPM2
     void Script::xpm2_open(){
         //read image stored in the XPM2 file format
+        //calls Image *loadFromXPM2
         clear_image_if_any();
         string filename;
         input >> filename;
         image = loadFromXPM2(filename);
     }
     
-    //calls void saveToXPM2
     void Script::xpm2_save(){
         //save image to XPM2 file format
+        //calls void saveToXPM2
         string filename;
         input >> filename;
         saveToXPM2(filename, image);
