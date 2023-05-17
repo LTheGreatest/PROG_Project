@@ -9,9 +9,6 @@ Espera-se que os elementos que participam neste trabalho não façam o obséquio
 SABER EXPLICAR BEM CODIGO TODO!!!
 
 !--> Fazer um recap de todo o código para comentar tudo direitinho (se for preciso), ver se está tudo claro e percebido e tentar melhorar:
-- Por codigo consistente/coerente (i.e variaveis), mais legível (variáveis explicitas) e comentar bem
-- Tentar por tudo mais eficiente ???
-- Ter especial atenção ao código mais ineficiente (median_filter) ( - median_filter -> feito e testado (muito pesado, necessita otimização quando estiver tudo concluido), melhorar variáveis)
 
 SUBMISSION INFORMATION
 ======================
