@@ -5,15 +5,15 @@ using namespace std;
 namespace prog{
   
   //constructor -> image with width w, height h and all pixels set to color fill
-  Image::Image(int w, int h, const Color &fill){
+  Image::Image(int w, int h, const Color& fill){
     width_ = w;
     height_ = h;
     for (int y = 0; y < height_; y ++){ //range of values of y needed
-      vector< Color > new_line;
+      vector<Color> new_line;
       for (int x = 0; x < width_; x++){ //range of values of x needed
-        new_line.push_back(fill);       //default value alocated in position (x,y) (line y)
+        new_line.push_back(fill);       //default value allocated in position (x, y) (line y)
       }
-      pixels_.push_back(new_line);      //line created previously is alocated in the matrix
+      pixels_.push_back(new_line);      //line created previously is allocated in the matrix
     }
   }
 
