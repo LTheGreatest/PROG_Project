@@ -29,12 +29,12 @@ namespace prog{
     return height_;
   }
 
-  //mutable reference to the values of pixel (x,y)
+  //mutable reference to the values of pixel (x, y)
   Color& Image::at(int x, int y){
     return pixels_[y][x];
   }
 
-  //read-only reference to the value of pixel (x,y)
+  //read-only reference to the value of pixel (x, y)
   const Color& Image::at(int x, int y) const{
     return pixels_[y][x];
   }
