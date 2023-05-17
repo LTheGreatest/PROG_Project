@@ -61,9 +61,9 @@ namespace prog{
                 continue;
             }
             if(command == "replace"){
-                Color a,b;
+                Color a, b;
                 input >> a >> b;
-                replace(a,b);
+                replace(a, b);
                 continue;
             }
             if (command == "fill"){
@@ -182,19 +182,19 @@ namespace prog{
         //replaces all (r1, g1, b1) pixels by (r2,  g2, b2)
         int height = image->height();
         int width = image->width();
-        for (int yy = 0; yy < height; yy++){
-            for (int xx = 0; xx < width; xx++){
-                if(image->at(xx, yy).blue() == rgb1.blue() && image->at(xx, yy).green() == rgb1.green() && image->at(xx, yy).red() == rgb1.red()){
-                    image->at(xx, yy).blue() = rgb2.blue();
-                    image->at(xx, yy).green() = rgb2.green();
-                    image->at(xx, yy).red() = rgb2.red();
+        for (int y = 0; y < height; y++){
+            for (int x = 0; x < width; x++){
+                if(image->at(x, y).blue() == rgb1.blue() && image->at(x, y).green() == rgb1.green() && image->at(x, y).red() == rgb1.red()){
+                    image->at(x, y).blue() = rgb2.blue();
+                    image->at(x, y).green() = rgb2.green();
+                    image->at(x, y).red() = rgb2.red();
                 }
             }    
         }
     }
         
     void Script::fill(int x, int y, int w, int h, const Color &other){
-        //for each pixel in the rectangle switch to the "other" Color"
+        //for each pixel in the rectangle switch to the "other" Color
         for (int line = y; line < y + h; line++){
             for(int col = x; col < x + w; col++){
                 image->at(col, line).blue() = other.blue();
@@ -256,7 +256,7 @@ namespace prog{
          Image new_image(w ,h);
          for(int yy = y; yy < y + h; yy++){
              for(int xx = x; xx < x + w; xx++){
-              new_image.at(xx - x,yy - y) = image->at(xx, yy);
+              new_image.at(xx - x, yy - y) = image->at(xx, yy);
             }
         }
         *image = new_image;
