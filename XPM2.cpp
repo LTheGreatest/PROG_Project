@@ -85,7 +85,7 @@ namespace prog {
             n--;
         }
         int y = 0;
-        while(getline(in, line) and y < h){
+        while (getline(in, line) and y < h){
             int x = 0;
             for (char c : line){
                 if (x == w) break;
@@ -100,30 +100,27 @@ namespace prog {
     void saveToXPM2(const std::string& file, const Image* image){
         //used for command xpm2_save
         ofstream out(file);
-        out << "! XMP2" << "\n";
+        out << "! XPM2" << "\n";
         int w, h, n, c = 1;
         w = image->width();
         h = image->height();
-        //characters used to encode colors (32 colors) 
-        vector<char> color_char {
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 
-            'i', 'j', 'k', 'l', 'm','n', 'o', 'p',
-            'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-            'y', 'z', '*', '+', '-', '.', '!', '?' 
-        };
-       map <Color,char> colordict; //operator< implemented for Color (more info Color.cpp)
+        //all characters from ASCII code (all possible colors using only one character)
+        char ascii_char = '!';
+        map <Color,char> colordict; //operator< implemented for Color (more info Color.cpp)
         //find number of different colors
-        int idx = 0; //auxiliary value used to acess color_char and store number of colors used
+        int color_count = 0; //auxiliary value used to store number of colors used
         for (int y = 0; y < h; y++){
             for (int x = 0; x < w; x++){
                 auto search = colordict.find(image->at(x,y));
-                if(search == colordict.end()){
-                    colordict.insert({image->at(x,y), color_char[idx]});
-                    idx++;
+                if (search == colordict.end()){
+                    if (ascii_char == '[' + 1 || ascii_char == '"') ascii_char++;
+                    colordict.insert({image->at(x,y), ascii_char});
+                    ascii_char++;
+                    color_count++;
                 }
             }
         }
-        n = idx; //idx has the number of colors used
+        n = color_count; //idx has the number of colors used
         out << w << ' '<< h << ' ' << n << ' ' << c <<'\n';
         // fill lines with char/color encoding
         for (auto i = colordict.begin(); i != colordict.end(); i++){
