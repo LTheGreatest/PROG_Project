@@ -1,4 +1,8 @@
-PROJETO PROG
+## PROG PROJECT
+This project was made for the PROG UC. The main objective is to manipulate images in the PNG format. There are also some functions to transform images in the XPM2 format to the PNG format and vice versa. 
 
-Este projeto é uma componente da UC de programação da LEIC. Neste trabalho serão implementadas algumas funções que manipulam imagens no formato PNG
-e outras funções para o formato XMP2.
+Final grade: 20/20
+
+### Notes
+
+This repository doesn't have all the files needed to run the project. It only contain the files used for evalution.
